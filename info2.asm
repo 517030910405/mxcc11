@@ -1,4 +1,7 @@
 
+
+
+
 extern __isoc99_scanf
 extern strcmp
 extern memcpy
@@ -10,4 +13,7 @@ extern strlen
 extern sprintf
 extern malloc
 extern _GLOBAL_OFFSET_TABLE_
+
+
+
 
