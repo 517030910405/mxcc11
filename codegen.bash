@@ -7,5 +7,5 @@ set -e
 cd "$(dirname "$0")"
 export CCHK="java -classpath ./lib/antlr-4.7.1-complete.jar:./bin pro1"
 cat > program.txt   # save everything in stdin to program.txt
-java -classpath ./lib/antlr-4.7.1-complete.jar:./bin pro1
+$CCHK
 cat result_all.asm
