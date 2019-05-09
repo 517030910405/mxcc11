@@ -92,7 +92,8 @@ L_003:  add     rsp, 24
         pop     rbx
         pop     rbp
         ret
-		
+
+
 mallocx8:
         push    rbp
         mov     rbp, rsp
@@ -111,44 +112,6 @@ mallocx8:
         mov     rax, qword [rbp-8H]
         leave
         ret
-
-		
-		
-		
-;mallocx8:
-;        push    rbp
-;        mov     rbp, rsp
-;        sub     rsp, 32
-;        mov     qword [rbp-18H], rdi
-;        mov     rax, qword [rbp-18H]
-;        add     rax, 2
-;        shl     rax, 3
-;        mov     rdi, rax
-;        call    malloc
-;        mov     qword [rbp-8H], rax
- ;       mov     rax, qword [rbp-8H]
- ;       mov     rdx, qword [rbp-18H]
- ;       mov     qword [rax], rdx
- ;       mov     rax, qword [rbp-8H]
- ;       leave
- ;       ret
-
-
-
-;mallocx8:
-;        push    rbp
-;        mov     rbp, rsp
-;        sub     rsp, 32
-;        mov     qword [rbp-18H], rdi
-;        mov     rax, qword [rbp-18H]
-;        add     rax, 2
-;        shl     rax, 3
-;        mov     rdi, rax
-;        call    malloc
-;        mov     qword [rbp-8H], rax
-;        mov     rax, qword [rbp-8H]
-;        leave
-;        ret
 
 
 parseInt:
@@ -356,6 +319,7 @@ getString:
         lea     rdi, [rel L_008]
         mov     eax, 0
         call    __isoc99_scanf
+        call    getchar
         lea     rdi, [rel __buffer_cache__]
         call    strlen
         mov     qword [rbp-10H], rax
@@ -418,6 +382,7 @@ getInt:
         lea     rdi, [rel L_006]
         mov     eax, 0
         call    __isoc99_scanf
+        call    getchar
         mov     rax, qword [rbp-10H]
         mov     rdx, qword [rbp-8H]
 
@@ -478,5 +443,9 @@ ord:
         ret
 
 
+		
+		
+		
+		
 		
 		

@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled26/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -213,18 +213,6 @@ public interface MxListener extends ParseTreeListener {
 	 */
 	void exitIf_stmt(MxParser.If_stmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code assign_in_for}
-	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssign_in_for(MxParser.Assign_in_forContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code assign_in_for}
-	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssign_in_for(MxParser.Assign_in_forContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code expr_in_for}
 	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
 	 * @param ctx the parse tree
@@ -236,6 +224,18 @@ public interface MxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpr_in_for(MxParser.Expr_in_forContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code assign_in_for}
+	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssign_in_for(MxParser.Assign_in_forContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code assign_in_for}
+	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssign_in_for(MxParser.Assign_in_forContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code none_in_for}
 	 * labeled alternative in {@link MxParser#for_expr_in_cir}.

@@ -12,7 +12,7 @@ singstat : ';'#empty_stmt|expr';'#sing_stmt|type_and_var';'#assign_stmt| Return_
     | While__'(' expr ')'singstat#while_stmt|'{'stat'}'#stmtmix|If__ '('expr')'singstat(Else__ singstat)?#if_stmt;
         //singexpr : (type_ ('[' ']')*)? expr ;
 //for_expr_in_cir:(type_? expr)*;
-for_expr_in_cir:type_and_var#assign_in_for|expr#expr_in_for|#none_in_for;
+for_expr_in_cir:expr#expr_in_for|type_and_var#assign_in_for|#none_in_for;
 type_and_var : type_ expr;
 type_ : var_ #type_var
     | int__#type_int

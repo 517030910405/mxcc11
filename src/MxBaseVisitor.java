@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled26/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -142,14 +142,14 @@ public class MxBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements MxV
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssign_in_for(MxParser.Assign_in_forContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpr_in_for(MxParser.Expr_in_forContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpr_in_for(MxParser.Expr_in_forContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssign_in_for(MxParser.Assign_in_forContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

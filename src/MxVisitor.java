@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled26/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -131,19 +131,19 @@ public interface MxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIf_stmt(MxParser.If_stmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code assign_in_for}
-	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssign_in_for(MxParser.Assign_in_forContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code expr_in_for}
 	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpr_in_for(MxParser.Expr_in_forContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code assign_in_for}
+	 * labeled alternative in {@link MxParser#for_expr_in_cir}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssign_in_for(MxParser.Assign_in_forContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code none_in_for}
 	 * labeled alternative in {@link MxParser#for_expr_in_cir}.

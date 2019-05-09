@@ -1,4 +1,4 @@
-// Generated from D:/compiler/untitled16/src\Mx.g4 by ANTLR 4.7.2
+// Generated from D:/compiler/untitled26/src\Mx.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -1098,19 +1098,19 @@ public class MxParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
-				_localctx = new Assign_in_forContext(_localctx);
+				_localctx = new Expr_in_forContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(159);
-				type_and_var();
+				expr(0);
 				}
 				break;
 			case 2:
-				_localctx = new Expr_in_forContext(_localctx);
+				_localctx = new Assign_in_forContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(160);
-				expr(0);
+				type_and_var();
 				}
 				break;
 			case 3:
@@ -2657,7 +2657,7 @@ public class MxParser extends Parser {
 		"\u009e\3\2\2\2\u009e\u00a0\3\2\2\2\u009fo\3\2\2\2\u009fp\3\2\2\2\u009f"+
 		"s\3\2\2\2\u009fv\3\2\2\2\u009f~\3\2\2\2\u009f\u0080\3\2\2\2\u009f\u0082"+
 		"\3\2\2\2\u009f\u008c\3\2\2\2\u009f\u0092\3\2\2\2\u009f\u0096\3\2\2\2\u00a0"+
-		"\17\3\2\2\2\u00a1\u00a5\5\22\n\2\u00a2\u00a5\5\26\f\2\u00a3\u00a5\3\2"+
+		"\17\3\2\2\2\u00a1\u00a5\5\26\f\2\u00a2\u00a5\5\22\n\2\u00a3\u00a5\3\2"+
 		"\2\2\u00a4\u00a1\3\2\2\2\u00a4\u00a2\3\2\2\2\u00a4\u00a3\3\2\2\2\u00a5"+
 		"\21\3\2\2\2\u00a6\u00a7\5\24\13\2\u00a7\u00a8\5\26\f\2\u00a8\23\3\2\2"+
 		"\2\u00a9\u00aa\b\13\1\2\u00aa\u00b0\5\30\r\2\u00ab\u00b0\5$\23\2\u00ac"+

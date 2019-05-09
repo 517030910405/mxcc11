@@ -70,6 +70,7 @@ public class pro1 {
 			//}
 		}
 		if (now.type.equals("variable")){
+			System.err.println(now.son.get(1).name);
 			if (!now.son.get(1).type.equals("atom")){
 				throw new Exception("Variable Declaim CE");
 			}
@@ -4525,24 +4526,24 @@ public class pro1 {
 					root1.scope.put(newname.name, newname);
 				}
 			}
-			//System.err.println("dfs1");
+			System.err.println("dfs1");
 			dfs1(root1, 0);
-//			System.err.println("dfs2");
+			System.err.println("dfs2");
 			dfs2(root1, 0);
-			////System.err.println();
-//			System.err.println("dfs3");
+			System.err.println();
+			System.err.println("dfs3");
 			dfs3(root1, 0);
-			//System.err.println("view1");
-			//view1(root1, 0);
-			//System.err.println("view2");
-			//view2(root1, 0);
-//			System.err.println("dfs4");
+			System.err.println("view1");
+			view1(root1, 0);
+			System.err.println("view2");
+			view2(root1, 0);
+			System.err.println("dfs4");
 			dfs4(root1, 0);
-			//System.err.println("view3");
-			//view3(root1, 0);
-			//System.err.println("view4");
-			//view4(root1, 0);
-//			System.err.println("dfs5");
+			System.err.println("view3");
+			view3(root1, 0);
+			System.err.println("view4");
+			view4(root1, 0);
+			System.err.println("dfs5");
 			dfs5(root1, 0);
 			if(root1.son.size()==0){
 				throw new Exception("Empty");
@@ -4561,8 +4562,8 @@ public class pro1 {
 		{
 			//throw new Exception("Well");
 			//System.err.println("CE");
-			//throw eee;
-			System.exit(-1);
+			throw eee;
+			//System.exit(-1);
 		}
 		//System.err.println("OK");
 		{
