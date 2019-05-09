@@ -3453,6 +3453,66 @@ public class pro1 {
 		}
 		return ans;
 	}
+
+	public static ArrayList<String> like_add2_cg_for_sh(String op,simple_instr instr)throws Exception{
+		ArrayList<String> ans = new ArrayList<String>();
+		if (addr_type(instr.addr1)==1&&addr_type(instr.addr2)<=2&&instr.addr3.type.equals("Val")) {
+			ans.add("mov " + addr_name(instr.addr1) + "," + addr_name(instr.addr2));
+			ans.add(op + " " + addr_name(instr.addr1) + "," + addr_name(instr.addr3));
+			return ans;
+		}
+		else if (addr_type(instr.addr1)==1&&addr_type(instr.addr2)<=2&&addr_type(instr.addr3)<=2){
+			if (codeGen_Reg.myreg.contains(1)){
+//				ans.add("mov "+codeGen_Reg.ConstReg2+","+codeGen_Reg.ConstReg3);
+//				ans.add("mov qword[rbp-8],rcx");
+			}
+			ans.add("mov " + addr_name(instr.addr1) + "," + addr_name(instr.addr2));
+			ans.add("mov "+codeGen_Reg.ConstReg3+","+addr_name(instr.addr3));
+			ans.add(op+" "+addr_name(instr.addr1)+",cl");
+			if (codeGen_Reg.myreg.contains(1)){
+//				ans.add("mov "+codeGen_Reg.ConstReg3+","+codeGen_Reg.ConstReg2);
+//				ans.add("mov rcx,qword[rbp-8]");
+			}
+
+		}
+		else {
+			if (codeGen_Reg.myreg.contains(1)){
+//				ans.add("mov "+codeGen_Reg.ConstReg2+","+codeGen_Reg.ConstReg3);
+//				ans.add("mov qword[rbp-8],rcx");
+			}
+
+			if (addr_type(instr.addr2)==3){
+				simple_addr addr = instr.addr2;
+				ans.addAll(move_addr_into2(codeGen_Reg.ConstReg1,addr));
+				ans.add("mov "+codeGen_Reg.ConstReg1+","+move_addr2_cache+"");
+			} else {
+				ans.add("mov "+codeGen_Reg.ConstReg1+","+addr_name(instr.addr2));
+			}
+			if (addr_type(instr.addr3)==3){
+				simple_addr addr = instr.addr3;
+				ans.addAll(move_addr_into2(codeGen_Reg.ConstReg3,addr));
+				ans.add("mov "+codeGen_Reg.ConstReg3 + ","+move_addr2_cache+"");
+			} else{
+				ans.add("mov "+codeGen_Reg.ConstReg3+","+addr_name(instr.addr3));
+			}
+			ans.add(op+" "+codeGen_Reg.ConstReg1+",cl");
+			if (addr_type(instr.addr1)<=2){
+				ans.add("mov "+addr_name(instr.addr1) + ","+codeGen_Reg.ConstReg1);
+			} else{
+				simple_addr addr = instr.addr1;
+				ans.addAll(move_addr_into2(codeGen_Reg.ConstReg2,addr));
+				ans.add("mov "+move_addr2_cache +","+codeGen_Reg.ConstReg1);
+			}
+			if (codeGen_Reg.myreg.contains(1)){
+//				ans.add("mov "+codeGen_Reg.ConstReg3+","+codeGen_Reg.ConstReg2);
+//				ans.add("mov rcx,qword[rbp-8]");
+			}
+
+		}
+		return ans;
+	}
+
+
 	public static ArrayList<String> condition_jump_cg(String op,simple_instr instr)throws Exception{
 		ArrayList<String> ans = new ArrayList<String>();
 		if (addr_type(instr.addr2)<=2){
@@ -4168,10 +4228,10 @@ public class pro1 {
 					nasm_code.addAll(like_add_cg("xor",instr));
 				}
 				else if (instr.name.equals("<<")){
-					nasm_code.addAll(like_add_cg("shl",instr));
+					nasm_code.addAll(like_add2_cg_for_sh("shl",instr));
 				}
 				else if (instr.name.equals(">>")){
-					nasm_code.addAll(like_add_cg("sar",instr));
+					nasm_code.addAll(like_add2_cg_for_sh("sar",instr));
 				}
 				else if (instr.name.equals("BNZ")){
 					nasm_code.addAll(condition_zero_jump_cg("jne",instr));
@@ -4261,53 +4321,53 @@ public class pro1 {
 		int len=0;
 		fix_out = new FileOutputStream("result_all.asm");
 		byte [] buffer ;
+		int sisi=5000000;
 
-
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("info1.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("result3.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("info2.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("info3.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("result1.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("info4.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("result2.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;
 		//System.err.println(len);
 		fix_out.write(buffer,0,len);
 
-		buffer = new byte[1000000];
+		buffer = new byte[sisi];
 		fix_in = new FileInputStream("info5.asm");
 		len = fix_in.read(buffer);
 		if (len<0) len = 0;

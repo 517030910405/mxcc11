@@ -3,7 +3,7 @@ import java.util.*;
 public class codeGen_Reg {
 	public static String ConstReg1 = "rax";
 	public static String ConstReg2 = "rdx";
-//	public static String ConstReg3 = "rcx";
+	public static String ConstReg3 = "rcx";
 	public static String RetReg = "rax";
 	public static int oth_tag = 0;
 	public static String give_new_tag(){
@@ -13,7 +13,7 @@ public class codeGen_Reg {
 
 	public static ArrayList<Integer> myreg = new ArrayList<Integer>(){{
 //		add(0);//rax
-		add(1);
+//		add(1);//rcx
 //		add(2);//rdx
 		add(3);
 //		add(4);//rsp
